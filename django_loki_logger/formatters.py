@@ -6,7 +6,7 @@ import requests
 from typing import Optional, Dict, Any
 from django.conf import settings
 
-class DjangoLokiFormatter(logging.Formatter):
+class LokiLoggerFormatter(logging.Formatter):
     """
     Enhanced Django formatter with Loki-specific formatting
     Includes log level handling and Django context

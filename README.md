@@ -1,15 +1,6 @@
 # Django-Loki-Logger
 Django logging handler and formatter with grafana/loki
 
-# Install Grafana
-
-# Install Loki
-
-## Installation methods
-
-
-# Installation
-
 Using pip:
 
 ```shell
@@ -28,7 +19,7 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'loki': {
-            '()': DjangoLokiFormatter,
+            '()': django_loki_logger.LokiLoggerFormatter,
             'fmt': '%(levelname)s %(message)s [%(module)s]',
             'source': 'my-django-app',
             'fqdn': True,
@@ -37,7 +28,7 @@ LOGGING = {
     },
     'handlers': {
         'loki': {
-            '()': LokiLoggerHttpHandler,
+            '()': django_loki_logger.LokiLoggerHttpHandler,
             'host': 'loki.example.com',
             'port': 3100,
             'timeout': 1.0,

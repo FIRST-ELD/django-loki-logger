@@ -15,5 +15,5 @@ from .handlers import LokiLoggerHttpHandler
 from .formatters import LokiLoggerFormatter
 
 __all__ = ['LokiLoggerHttpHandler', 'LokiLoggerFormatter']
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 name = "django_loki_logger"

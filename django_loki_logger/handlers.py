@@ -1,9 +1,9 @@
 import logging
 import sys
-
+import socket
 import requests
-
-from django_loki.formatters import LokiFormatter
+from typing import Optional, Dict, Any
+from django_loki_logger.formatters import LokiLoggerFormatter
 
 
 class LokiLoggerHttpHandler(logging.Handler):
@@ -19,7 +19,7 @@ class LokiLoggerHttpHandler(logging.Handler):
         super().__init__()
         self._endpoint = f'{protocol}://{host}:{port}/loki/api/v1/push'
         self._timeout = timeout
-        self._formatter = DjangoLokiFormatter(
+        self._formatter = LokiLoggerFormatter(
             source=source,
             fqdn=fqdn,
             label_map=label_map
@@ -27,8 +27,8 @@ class LokiLoggerHttpHandler(logging.Handler):
 
     def setFormatter(self, fmt: logging.Formatter) -> None:
         """Ensure we only use compatible formatters"""
-        if not isinstance(fmt, DjangoLokiFormatter):
-            raise ValueError("This handler requires a DjangoLokiFormatter")
+        if not isinstance(fmt, LokiLoggerFormatter):
+            raise ValueError("This handler requires a LokiLoggerFormatter")
         self._formatter = fmt
 
     def emit(self, record: logging.LogRecord) -> None:
