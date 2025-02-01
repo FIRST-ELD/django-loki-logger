@@ -1,5 +1,11 @@
 # Django-Loki-Logger
+
+[![PyPI version](https://img.shields.io/pypi/v/django-loki-logger.svg)](https://pypi.org/project/django-loki-logger/)
+[![Python version](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/pypi/l/django-loki-logger.svg)](https://opensource.org/licenses/MIT)
+
 Django logging handler and formatter with grafana/loki
+https://grafana.com/loki
 
 Using pip:
 

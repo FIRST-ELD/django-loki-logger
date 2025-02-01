@@ -12,7 +12,6 @@ setup(
     keywords=['python', 'loki', 'grafana', 'logging', 'metrics', 'django', 'monitoring'],
     install_requires=[
         'requests',
-        'pytz',
     ],
     classifiers=[
         # License
